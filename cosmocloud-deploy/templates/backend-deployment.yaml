@@ -1,10 +1,10 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-deployment
-  namespace: default
 spec:
-  replicas: {{ .Values.backend.replicas }}
+  replicas: {{ .Values.backend.replicaCount }}
   selector:
     matchLabels:
       app: backend
@@ -20,4 +20,4 @@ spec:
         - containerPort: {{ .Values.backend.port }}
         env:
         - name: REDIS_URI
-          value: {{ .Values.backend.env.REDIS_URI }}
+          value: redis://redis-svc:6379

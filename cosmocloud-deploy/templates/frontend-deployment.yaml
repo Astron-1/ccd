@@ -1,10 +1,10 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
-  namespace: default
 spec:
-  replicas: {{ .Values.frontend.replicas }}
+  replicas: {{ .Values.frontend.replicaCount }}
   selector:
     matchLabels:
       app: frontend
@@ -20,4 +20,4 @@ spec:
         - containerPort: {{ .Values.frontend.port }}
         env:
         - name: BACKEND_URL
-          value: {{ .Values.frontend.env.BACKEND_URL }}
+          value: http://backend-svc:8000
