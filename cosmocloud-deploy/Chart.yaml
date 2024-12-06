@@ -3,3 +3,4 @@ name: cosmocloud-deploy
 description: A Helm chart for deploying backend, frontend, and Redis
 version: 0.1.0
 appVersion: "1.0.0"
+icon: "https://doodleipsum.com/30x13/abstract?i=9c8765a80fc8a28621b7178c9aec581d"
